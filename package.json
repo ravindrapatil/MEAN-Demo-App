@@ -1,0 +1,25 @@
+{
+  "name": "api-shop",
+  "version": "1.0.0",
+  "description": "A Node.js RESTFUL API Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "Ravindra S Patil",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.9",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.1"
+  }
+}
