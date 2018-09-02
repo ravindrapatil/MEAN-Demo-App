@@ -3,8 +3,9 @@ const Product = require('../models/products');
 
 exports.products_get_all = (req, res, next) => {
     Product.find()
-    .select("name price _id productImage")
-    .exec()
+    .select("name price _id productImage") 
+    .sort({$natural: -1}) 
+    .exec() 
     .then(docs => {
         console.log(docs);
         if(docs.length != 0){
