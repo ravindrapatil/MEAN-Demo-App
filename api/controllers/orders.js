@@ -14,10 +14,12 @@ exports.orders_get_all = (req, res, next) => {
         res.status(200).json({
             count: docs.length,
             orders: docs.map(doc => {
+                let totalPrice = doc.product.price * doc.quantity;
                 return {
                     _id: doc._id,
                     product: doc.product,
                     quantity: doc.quantity,
+                    total: totalPrice,
                     request: {
                         type: 'GET',
                         url: `http://localhost:3000/orders/${doc._id}`
