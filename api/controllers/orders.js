@@ -5,7 +5,7 @@ const Product = require('../models/products');
 exports.orders_get_all = (req, res, next) => {
     Order.find()
     .select("quantity product _id")
-    .populate('product', 'name')
+    .populate('product', 'price name')
     // To add product information into the list of orders, we can use the populate method. Here we have to
     // add the name of the property (product, name) that we want to populate.
     .exec()
