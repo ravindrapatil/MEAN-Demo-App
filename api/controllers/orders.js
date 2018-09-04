@@ -15,7 +15,12 @@ exports.orders_get_all = (req, res, next) => {
         res.status(200).json({
             count: docs.length,
             orders: docs.map(doc => {
-                let totalPrice = doc.product.price * doc.quantity;
+                // let totalPrice = doc.product.price * doc.quantity;
+                if(doc.product == null) {
+                    totalPrice = 0
+                } else {
+                    totalPrice = doc.product.price * doc.quantity;
+                }
                 return {
                     _id: doc._id,
                     product: doc.product,
